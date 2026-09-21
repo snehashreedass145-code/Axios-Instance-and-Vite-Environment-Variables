@@ -1,32 +1,30 @@
 // ─────────────────────────────────────────────────────────────
-// TODO (1/2): Create a configured Axios instance.
+// TODO (2/2): Implement the threads service using the Axios instance.
 //
 // Requirements (the auto-grader checks these):
-//   • Use axios.create(...) — do NOT call bare axios.get / axios.post elsewhere.
-//   • baseURL must come from import.meta.env.VITE_API_URL  (NOT a hardcoded string).
-//   • Add default headers:
-//        "Content-Type": "application/json"
-//        Accept:         "application/json"
-//   • export the instance as the default export.
+//   • Import the LOCAL apiClient instance — NOT bare "axios".
+//   • getThreads():        apiClient.get("/api/threads")        → return response.data
+//   • createThread(data):  apiClient.post("/api/threads", data) → return response.data
+//   • Return response.data (the payload), NOT the whole response object.
 //
-// import axios from "axios";
-//
-// const apiClient = axios.create({
-//   // ...your config here...
-// });
-//
-// export default apiClient;
+// Example shape:
+import apiClient from "./apiClient";
+//   export async function getThreads() {
+//     const response = await apiClient.get("/api/threads");
+//     return response.data;
+//   }
 // ─────────────────────────────────────────────────────────────
 
-// Placeholder so the app runs before you implement this.
-// Replace EVERYTHING below with your axios.create() instance.
-const apiClient = {
-  get() {
-    throw new Error("NOT_IMPLEMENTED");
-  },
-  post() {
-    throw new Error("NOT_IMPLEMENTED");
-  },
-};
+// Placeholder so the app compiles. Replace both functions with real
+// apiClient calls that return response.data.
 
-export default apiClient;
+
+export async function getThreads() {
+  const response = await apiClient.get("/api/threads");
+  return response.data;
+}
+
+export async function createThread(data) {
+  const response = await apiClient.post("/api/threads", data);
+  return response.data;
+}
