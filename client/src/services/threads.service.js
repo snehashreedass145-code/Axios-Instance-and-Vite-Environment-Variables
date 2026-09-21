@@ -18,6 +18,7 @@
 // Placeholder so the app compiles. Replace both functions with real
 // apiClient calls that return response.data.
 import apiClient from "./apiClient";
+
 export async function getThreads() {
   const response = await apiClient.get("/api/threads");
   return response.data;
